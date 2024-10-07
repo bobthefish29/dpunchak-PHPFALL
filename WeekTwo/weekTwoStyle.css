@@ -1,0 +1,9 @@
+#navBar{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+}
+
+a{
+    color:white;
+}
