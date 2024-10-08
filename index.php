@@ -4,7 +4,11 @@
 <style>
 <?php include 'style/main.css';?>
 </style>
+<!-- <script>
+    let test = '';
+    debugger;
 
+</script> -->
 <h1>Welcome to David's PHP page</h1>
 
 <nav id='navBar'>

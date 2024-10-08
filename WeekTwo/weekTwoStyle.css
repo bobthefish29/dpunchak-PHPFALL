@@ -3,7 +3,16 @@
     justify-content: space-evenly;
     background-color: black;
 }
-
+html{
+    background-color: rgb(87, 87, 87);
+}
 a{
     color:white;
+}
+#form-output-holder{
+    color:white;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }

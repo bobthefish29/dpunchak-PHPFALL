@@ -44,6 +44,9 @@ else
 
 <main>
 
+
+    <div style="background-color: black; display:flex; justify-content:center; height:100px; font-size:75px;"><a href="../../index.php">Home</a></div>
+
     <div class='form-wrapper'>
         <form method='post'>
             <div class='form-control'>
