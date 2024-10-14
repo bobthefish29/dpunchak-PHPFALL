@@ -19,7 +19,7 @@
         <a href="WeekTwo/index.php">Week Two</a>
     </div>
     <div class='navELM'>
-        <a href="#">Week 3</a>
+        <a href="WeekThree/index.php">Week 3</a>
     </div>
     <div class='navELM'>
         <a href="#">Week 4</a>

@@ -13,6 +13,7 @@ include '../functions.php';
 <nav id='navBar'>
     <div><a href="InClass/formDemo.php">In classForm</a></div>
     <div><a href="homeWork/pation.php">HomeWork</a></div>
+    <div><a href="../index.php">Back</a></div>
 </nav>
 
 <?php include '../includes/footer.php'; ?>
