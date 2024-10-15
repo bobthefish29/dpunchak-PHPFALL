@@ -42,7 +42,7 @@ $checkingFun = new CheckingAccount ('C123', 1000, '12-20-2019');
 
 // $checking = new CheckingAccount ('C123', 1000, '12-20-2019');
 // echo $checking->getAccountDetails();
-echo $checkingFun->getAccountDetails();
+//echo $checkingFun->getAccountDetails();
 // $checking->deposit(500);
 // echo $checking->getAccountDetails();
 // var_dump($checking);

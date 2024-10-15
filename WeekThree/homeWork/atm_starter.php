@@ -2,13 +2,7 @@
     <a href="../index.php">Back</a>
 
 </nav>
-
-
-
-
 <?php
-
-    require_once "./account.php";
     require_once "./checking.php";
     require_once "./savings.php";
 
@@ -16,16 +10,17 @@
     $checkingID = filter_input(INPUT_POST, 'checkingID');
     $checkingBal = filter_input(INPUT_POST, 'checkingBal');
     $checkingDate = filter_input(INPUT_POST, 'checkingDate');
+    $checking = new CheckingAccount($checkingID,$checkingBal,$checkingDate);
     //for saving
     $savingId = filter_input(INPUT_POST, 'savingId');
     $savingBal = filter_input(INPUT_POST, 'savingBal');
     $savingDate = filter_input(INPUT_POST, 'savingDate');
+    $saving = new SavingsAccount($savingId,$savingBal,$savingDate);
 
 
     //check to see if anybutton was clicked, else its setting the placeholder values in the else
     if (isset ($_POST['withdrawChecking'])) 
     {
-        $checking = new CheckingAccount($checkingID,$checkingBal,$checkingDate);
         //check for valed number
         if(filter_input(INPUT_POST, 'checkingWithdrawAmount', FILTER_VALIDATE_FLOAT)){
             //check for postive
@@ -46,7 +41,6 @@
 
     else if (isset ($_POST['depositChecking'])) 
     {
-        $checking = new CheckingAccount($checkingID,$checkingBal,$checkingDate);
         //Check for a valed number
         if(filter_input(INPUT_POST, 'checkingDepositAmount', FILTER_VALIDATE_FLOAT)){
             //check for postive
@@ -62,7 +56,6 @@
     } 
     else if (isset ($_POST['withdrawSavings'])) 
     {
-        $saving = new SavingsAccount($savingId,$savingBal,$savingDate);
         //check for valed number
         if(filter_input(INPUT_POST, 'savingsWithdrawAmount', FILTER_VALIDATE_FLOAT)){
             //check for postive
@@ -82,7 +75,6 @@
     } 
     else if (isset ($_POST['depositSavings'])) 
     {
-        $saving = new CheckingAccount($savingId,$savingBal,$savingDate);
         //Check for a valed number
         if(filter_input(INPUT_POST, 'savingsDepositAmount', FILTER_VALIDATE_FLOAT)){
             //check for postive
@@ -97,17 +89,21 @@
         }
 
 
-    }else{
+    }
+    else
+    {
         // if its the first time comming this is just setting the values
         // if its your first time comming than this is the values to change
         //this is where the get info would go
+
         $checkingID = "C123";
         $checkingBal = 1000;
         $checkingDate = "03-20-2020";
-
+        $checking = new CheckingAccount($checkingID,$checkingBal,$checkingDate);
         $savingId = 'S123';
         $savingBal = 5000;
         $savingDate = '03-20-2020';
+        $saving = new SavingsAccount($savingId,$savingBal,$savingDate);
     }
 ?>
 
@@ -152,12 +148,7 @@
         <div class="wrapper">
             
             <div class="account">
-                <h2>Checking Account</h2>
-                <ul>
-                    <li>Account ID: <?=$checkingID?></li>
-                    <li>Balance: $<?=$checkingBal?></li>
-                    <li>Open Date: <?=$checkingDate?></li>
-                </ul>
+                <?=$checking->getAccountDetails()?>
                 <input type="hidden" name="checkingID" value=<?=$checkingID?>>
                 <input type="hidden" name="checkingBal" value=<?=$checkingBal?>>
                 <input type="hidden" name="checkingDate" value=<?=$checkingDate?>>
@@ -171,20 +162,11 @@
                 </div>
             </div>
 
-
-
-
             <div class="account">
-                <h2>Saving Account</h2>
-                <ul>
-                    <li>Account ID: <?=$savingId?></li>
-                    <li>Balance: $<?=$savingBal?></li>
-                    <li>Open Date: <?=$savingDate?></li>
-                </ul>
+                <?=$saving->getAccountDetails()?>
                 <input type="hidden" name="savingId" value=<?=$savingId?>>
                 <input type="hidden" name="savingBal" value=<?=$savingBal?>>
                 <input type="hidden" name="savingDate" value=<?=$savingDate?>>
-
                 <div class="accountInner">
                     <input type="text" name="savingsWithdrawAmount" value="" />
                     <input type="submit" name="withdrawSavings" value="Withdraw" />

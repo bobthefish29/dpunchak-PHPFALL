@@ -38,7 +38,7 @@ class SavingsAccount extends Account
 $savingsFun = new SavingsAccount('S123', 5000, '03-20-2020');
 
 // $savings->withdrawal(5001);
-echo $savingsFun->getAccountDetails();
+//echo $savingsFun->getAccountDetails();
 
 // $savings->deposit(1000);
 // echo $savings->getAccountDetails();
