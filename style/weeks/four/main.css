@@ -1,0 +1,40 @@
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1{
+    width: 100%;
+    height: 40px;
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#newPerson{
+    width: 100%;
+    background-color: pink;
+}
+#newPersonButton{
+    width: 100%;
+    height: 40px;
+    font-size: 35px;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+table{
+    margin-top:40px ;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    border:1px solid black;
+    background-color: pink;
+}
+tr{
+    width: 100%;
+    background-color: gray;
+    font-size: 20px;
+}

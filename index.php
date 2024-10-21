@@ -3,6 +3,8 @@
 <!-- this is how you include css in you pages -->
 <style>
 <?php include 'style/main.css';?>
+<?php include 'style/weeks/homePage.css';?>
+<?php include 'style/navBar.css';?>
 </style>
 <!-- <script>
     let test = '';
@@ -12,41 +14,23 @@
 <h1>Welcome to David's PHP page</h1>
 
 <nav id='navBar'>
-    <div class='navELM'>
-        <a href="#">Week one(disable)</a>
-    </div>
-    <div class='navELM'>
-        <a href="WeekTwo/index.php">Week Two</a>
-    </div>
-    <div class='navELM'>
-        <a href="WeekThree/index.php">Week 3</a>
-    </div>
-    <div class='navELM'>
-        <a href="#">Week 4</a>
-    </div>
-    <div class='navELM'>
-        <a href="#">Week 5</a>
-    </div>
-    <div class='navELM'>
-        <a href="#">Week 6</a>
-    </div>
-    <div class='navELM'>
-        <a href="#">Week 7</a>
-    </div>
-    <div class='navELM'>
-        <a href="#">Week 8</a>
-    </div>
-    <div class='navELM'>
-        <a href="#">Week 9</a>
-    </div>
-    <div class='navELM'>
-        <a href="#">Week 10</a>
-    </div>
+    <label id="navLabel">David</label>
+    <a class='navELM' href="#">Week one(disable)</a>
+    <a class='navELM' href="WeekTwo/index.php">Week Two</a>
+    <a class='navELM' href="WeekThree/index.php">Week 3</a>
+    <a class='navELM' href="weekFour/index.php">Week 4</a>
+    <a class='navELM' href="#">Week 5</a>
+    <a class='navELM' href="#">Week 6</a>
+    <a class='navELM' href="#">Week 7</a>
+    <a class='navELM' href="#">Week 8</a>
+    <a class='navELM' href="#">Week 9</a>
+    <a class='navELM' href="#">Week 10</a>
 </nav>
 
-<section class='secHolder'>
+<main class='secHolder'>
     <h2>Links to php items</h2>
-    <div>
+    <div class="info">
+        <label>GitRepo</label>
         <ul>
             <li> 
                 <a href="https://github.com/bobthefish29/dpunchak-PHPFALL">GitRepo</a>
@@ -54,7 +38,7 @@
         </ul>
     </div>
 
-    <div>
+    <div class="info">
         <label>PHP help</label>
         <ol>
             <li><a href='https://www.w3schools.com/php/'>W3 Schools</a></li>
@@ -63,7 +47,7 @@
         </ol>
     </div>
 
-    <div>
+    <div class="info">
         <label>Git help</label>
         <ol>
             <li><a href='https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners'>Product hub</a></li>
@@ -72,7 +56,7 @@
         </ol>
     </div>
 
-    <div>
+    <div class="info">
         <label>Stuff i like</label>
         <ol>
             <li>Playing video games</li>
@@ -80,8 +64,7 @@
             <li>being a silly billy</li>
         </ol>
     </div>
-
-</section>
+</main>
 
 </br>
 </br>

@@ -3,14 +3,8 @@ include '../../includes/header.php';
 // this is adding the functions
 include '../../functions.php';
 
-// filter_input(INPUT_POST, 'name')
+include 'models/model_patent.php';
 
-// function test_input($data) {
-//     $data = trim($data);
-//     $data = stripslashes($data);
-//     $data = htmlspecialchars($data);
-//     return $data;
-// }
 
 $fName = '';
 $lName = '';
@@ -26,30 +20,25 @@ $error = ' ';
 if(isset($_POST['submitButton'])){
     $error = '';
 
-
-    
-
     // first Name
     if(filter_input(INPUT_POST, 'fName') != ''){
         $fName = filter_input(INPUT_POST, 'fName');
     }else{
         $error .= 'You need a First Name </br></br>';
     }
-
     // Last Name
     if(filter_input(INPUT_POST, 'lName') != ''){
         $lName = filter_input(INPUT_POST, 'lName');
     }else{
         $error .= 'You need a Last Name </br></br>';
     }
-
+    //for married
     if(filter_input(INPUT_POST, 'married') != null){
         $married = filter_input(INPUT_POST, 'married');
     }
     else{
         $error .= 'Married needs a value</br></br>';
     }
-
     //this if for the date
     if(filter_input(INPUT_POST, 'date') != ''){
         if(strtotime(filter_input(INPUT_POST, 'date')) > strtotime(date("Y/m/d"))){
@@ -61,8 +50,6 @@ if(isset($_POST['submitButton'])){
     }else{
         $error .= 'Date needs a value</br></br>';
     }
-
-
     // height
     // check if its an input
     if(filter_input(INPUT_POST, 'height') != ''){
@@ -100,25 +87,26 @@ if(isset($_POST['submitButton'])){
         $error .= 'Weight needs a input</br></br>';
     }
 
-
     
+
+    if ($error == ""){
+        echo "funk";
+        addPerson ($fName, $lName, $married, $birth);
+        header('Location: patent_view.php');
+        exit();
+    }
+
 
 
 
 }else{
-    echo 'First time comming';
     $fName = '';
     $lName = '';
-
-
     $married = '';
     $birth = '';
-
     $height = '';
     $weight = '';
 }
-
-
 
 ?>
 <!-- this sesction is just for the nav bar-->
@@ -126,8 +114,7 @@ if(isset($_POST['submitButton'])){
 <?php include '../weekTwoStyle.css'; ?>
 </style>
 <nav id='navBar'>
-    <div><a href="../index.php">Back</a></div>
-    <div><a href="../../index.php">Home</a></div>
+    <div><a href="index.php">Back</a></div>
 </nav>
 
 
@@ -159,12 +146,10 @@ if(isset($_POST['submitButton'])){
                 <label>Married<label></br>
                 <!-- In vlaue you need the = -->
                 <label>Yes</label>
-                <input type="radio" name="married" value="yes" <?=($married=='yes') ? "checked" : ""?>>
+                <input type="radio" name="married" value="1" <?=($married=='1') ? "checked" : ""?>>
                 <!-- <input type='radio' name='married' value=1> -->
                 <label>no</label>
-                <input type="radio" name="married" value="no" <?=($married=='no') ? "checked" : ""?>>
-                
-                <!-- <input type='radio' name='married' value=0 checked> -->
+                <input type="radio" name="married" value="0" <?=($married=='0') ? "checked" : ""?>>
             </div>
 
 
@@ -212,6 +197,7 @@ if(isset($_POST['submitButton'])){
         </div>
     </div>
 </main>
+
 
 
 <?php include '../../includes/footer.php';?>

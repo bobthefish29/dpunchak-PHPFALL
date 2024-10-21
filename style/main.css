@@ -1,24 +1,5 @@
-h1{
-    display: flex;
-    justify-content: center;
-}
-#navBar{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    background-color: black;
-}
-.navELM{
-    justify-content: center;
-    background-color: rgb(87, 87, 87);
+html{
+    background-color:rgb(220,220,220);
     height: 100%;
-    padding: 10px;
-    color:white;
-}
-a{
-    color: white;
 }
 
-.secHolder{
-    background-color: rgb(187, 187, 187);
-}
