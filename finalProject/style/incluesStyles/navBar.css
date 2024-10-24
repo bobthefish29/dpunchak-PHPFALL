@@ -1,0 +1,26 @@
+#navBar{
+    display: flex;
+    flex-direction:row ;
+    justify-content: space-between;
+}
+#navBar #left label{
+    width: 100px;
+}
+
+#navBar #middle{
+    background-color: red;
+    width: 70%;
+    display: flex;
+    flex-direction:row ;
+    justify-content: space-between;
+}
+#navBar .navLink{
+    background-color: purple;
+    height: 100%;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+
+    
+}

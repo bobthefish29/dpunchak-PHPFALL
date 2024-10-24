@@ -1,0 +1,18 @@
+html{
+    background-color: pink;
+}
+html::-webkit-scrollbar {
+    display: none;
+}
+body{
+    background-color: orange;
+}
+
+@media (max-width: 600px) {
+    main{
+        background-color: red;
+    }
+    footer{
+        height: 50px;
+    }
+}
